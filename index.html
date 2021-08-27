@@ -3,10 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Is your birthdate lucky?</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <script src="script.js"></script>
+    <h1>Is your birthdate lucky?</h1>
+    <p>Tell us your birthdate and your lucky number and we'll tell you if your birthdate is lucky or not.</p>
+    <label for="dob">Enter your birthdate</label>
+    <input id="dob" type="date" />
+
+    <label for="lucky-number">Enter your birthdate</label>
+    <input id="lucky-number" type="number" />
+    
+    <button>Check</button>
+
+    <p id="output"></p>
   </body>
 </html>
