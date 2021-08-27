@@ -18,22 +18,30 @@ const calculateIfLucky = (num, dob) => {
 }
 
 const displayOutput = (isLucky) => {
-  outputElement.textContent = isLucky ? "Wow, your birthday is lucky!" : 'Not so lucky, but hey, we make our own luck.'
+  outputElement.style.display = "block";
+  outputElement.textContent = isLucky ? "Wow, your birthday is lucky! 🍀" : 'Not so lucky, but hey, we make our own luck. 💪'
+}
+
+const hideOutput = () => {
+  outputElement.style.display = "none";
 }
 
 const displayError = (errMessage) => {
+  errorElement.style.display = 'block';
   errorElement.textContent = errMessage
 }
 const hideError = () => {
+  errorElement.style.display = 'none';
   errorElement.textContent = '';
 }
 
 checkBtn.addEventListener('click', () => {
-  const luckyNum = luckyNumElement.value;
+  const luckyNum = Number(luckyNumElement.value);
+  const dateValue = dobElement.value;
 
   try{
-    if(luckyNum <= 0){
-      const err = { message: "A negative lucky number? Really?"};
+    if(luckyNum <= 0 || !dateValue){
+      const err = { message: "Please check if the date and lucky number are entered correctly" };
       throw err;
     }
     
@@ -43,6 +51,7 @@ checkBtn.addEventListener('click', () => {
     displayOutput(isLucky);
 
   } catch(err){
+    hideOutput();
     displayError(err.message);
   }
 
