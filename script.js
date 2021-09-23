@@ -3,6 +3,7 @@ const luckyNumElement = document.querySelector('#lucky-number');
 const checkBtn = document.querySelector('button');
 const outputElement = document.querySelector('#output');
 const errorElement = document.querySelector('#error');
+const graphicImage = document.querySelector('img');
 
 const calculateIfLucky = (num, dob) => {
 
@@ -20,10 +21,12 @@ const calculateIfLucky = (num, dob) => {
 const displayOutput = (isLucky) => {
   outputElement.style.display = "block";
   outputElement.textContent = isLucky ? "Wow, your birthday is lucky! 🍀" : 'Not so lucky, but hey, we make our own luck. 💪'
+  graphicImage.src= isLucky ? 'https://i.giphy.com/media/xUA7aSXE8lpQ7REDfi/giphy.webp' : './thereThere.gif';
 }
 
 const hideOutput = () => {
   outputElement.style.display = "none";
+  graphicImage.src = '';
 }
 
 const displayError = (errMessage) => {
