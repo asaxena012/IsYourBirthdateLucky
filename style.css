@@ -41,6 +41,10 @@ button{
   cursor: pointer;
 }
 
+footer{
+  margin: 3rem;
+}
+
 #error{
   display: none;
   color: red;
